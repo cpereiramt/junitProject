@@ -10,7 +10,7 @@ class HelloControllerTest {
 	void testHello() {
 		HelloController controller = new HelloController();
 		String response = controller.hello("World");
-		assertEquals("Hello WORLD", response);
+		assertEquals("Hello World", response);
 	}
 
 }
