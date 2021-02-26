@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ class HelloControllerWebTest {
 	@Autowired
 	private MockMvc mvc;
 	@Test
+	@DisplayName("testing route default value")
 	void testHello() {
 		RequestBuilder request = MockMvcRequestBuilders.get("/hello");
 		try {
@@ -35,9 +37,9 @@ class HelloControllerWebTest {
 	}
 	
 	@Test
+	@DisplayName("Testing passing parameters")
 	public void testHelloWithName() throws Exception {
 		mvc.perform(get("/hello?name=clayton"))
 		.andExpect(content().string("Hello clayton"));
 	}
-
 }
