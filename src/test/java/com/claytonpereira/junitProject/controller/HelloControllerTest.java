@@ -2,6 +2,7 @@ package com.claytonpereira.junitProject.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +13,8 @@ class HelloControllerTest {
 	void testHello() {
 		HelloController controller = new HelloController();
 		String response = controller.hello("World");
-		assertEquals("Hello World", response);
+		// creating group of assertions 
+		Assertions.assertAll(() -> assertEquals("Hello World", response));
 	}
 
 }
